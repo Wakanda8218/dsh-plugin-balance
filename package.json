@@ -1,0 +1,57 @@
+{
+  "name": "dsh-plugin-balance",
+  "version": "0.1.0",
+  "description": "Show the current conversation's spend and the DeepSeek account balance in the composer stats dock",
+  "icon": "./icon.svg",
+  "type": "module",
+  "main": "lib/index.js",
+  "scripts": {
+    "verify": "node scripts/verify.mjs"
+  },
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/client.js",
+    "cordis.patch.yml",
+    "icon.svg",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wakanda8218/dsh-plugin-balance.git"
+  },
+  "homepage": "https://github.com/Wakanda8218/dsh-plugin-balance#readme",
+  "bugs": {
+    "url": "https://github.com/Wakanda8218/dsh-plugin-balance/issues"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "balance",
+    "cost",
+    "usage"
+  ],
+  "dsh": {
+    "manifestVersion": 1,
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-api-remotes",
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ]
+    }
+  },
+  "engines": {
+    "node": ">=24",
+    "dsh": ">=0.2.2-rc.1 <0.3.0"
+  },
+  "license": "MIT"
+}
