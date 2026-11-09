@@ -1,0 +1,4 @@
+# dsh-plugin-balance bundle layer: mount the plugin's own Loader entry.
+- insert:
+    - id: ui-balance
+      name: dsh-plugin-balance
